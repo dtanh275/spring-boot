@@ -1,0 +1,27 @@
+allprojects {
+    apply plugin: 'idea'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    group = 'com.donkey.spring'
+    version = '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    sourceCompatibility = '11'
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.12'
+        annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+        testCompileOnly 'org.projectlombok:lombok:1.18.12'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+    }
+}

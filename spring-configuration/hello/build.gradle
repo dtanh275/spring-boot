@@ -1,0 +1,5 @@
+application {
+    mainClass = 'com.donkey.spring.springconfiguration.hello.MessageFactoryApplication'
+}
+
+

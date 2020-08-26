@@ -1,0 +1,9 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'com.donkey.spring.springconfiguration.hello.MessageFactoryApplication'
+}
+
+

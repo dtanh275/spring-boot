@@ -1,0 +1,13 @@
+plugins {
+    id 'application'
+}
+
+dependencies {
+    compile group: 'org.springframework', name: 'spring-context', version: '5.2.8.RELEASE'
+}
+
+application {
+    mainClass = 'com.donkey.spring.springconfiguration.context.SpringXmlConfiguration'
+}
+
+

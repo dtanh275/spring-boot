@@ -3,7 +3,7 @@ dependencies {
 }
 
 application {
-    mainClass = 'com.donkey.spring.springconfiguration.context.SpringXmlConfiguration'
+    mainClass = 'com.donkey.spring.springconfiguration.annotation.SpringAnnotationApp'
 }
 
 

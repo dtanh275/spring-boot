@@ -1,5 +1,3 @@
-# Spring Configuration
-
 ## Hello Spring
 
 Để hiểu rõ cách Spring hoạt động, trước tiên chúng ta sẽ code một ứng dụng đơn giản mô phỏng lại cách hoạt động của Spring framework.
@@ -130,43 +128,3 @@ public static void main(String... args) {
 
 Source code cho ví dụ này có thể tim ở [đây](https://github.com/dtanh275/spring-guide/tree/master/spring-configuration/context)
 
-## Spring Configuration Using Annotation
-
-Việc cấu hình sử dụng file xml có thể gây khó khăn cho người sử dụng. Bắt đầu từ Spring 3.0, Spring cho phép cấu hình thông qua class annotation.
-
-Nội dung file `app-context.xml` trên có thế được viết lại sử dụng class annotation
-
-```java
-@Configuration
-public class SpringAnnotationConfig {
-
-    @Bean
-    public MessageProvider provider() {
-        return new HelloSpringProvider();
-    }
-
-    @Bean
-    public MessageRenderer renderer() {
-        MessageRenderer renderer = new ConsoleMessageRenderer();
-        renderer.setProvider(provider());
-
-        return renderer;
-    }
-}
-```
-
-Khi đó trong `main()` thay vì sủ dụng `ClassPathXmlApplicationContext` context để đọc file xml, chúng ta sử dụng `AnnotationConfigApplicationContext` context để đọc cấu hình sử dụng class annotation.
-
-```java
-public static void main(String... args) {
-    ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringAnnotationConfig.class);
-
-    MessageRenderer renderer = ctx.getBean("renderer", MessageRenderer.class);
-    System.out.println(renderer.render());
-
-}
-```
-
-### Source code
-
-Source code cho ví dụ này có thể tim ở [đây](https://github.com/dtanh275/spring-guide/tree/master/spring-configuration/annotation)

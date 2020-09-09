@@ -1,8 +1,10 @@
 rootProject.name = 'spring-guide'
+
 include 'spring-configuration:hello'
 include 'spring-configuration:context'
 include 'spring-configuration:annotation'
 
 include 'spring-di:javaconfiguration'
+include 'spring-di:injection'
 
 

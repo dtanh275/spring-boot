@@ -2,7 +2,7 @@
 
 ### Spring configuration using annotation
 
-Ở ví dụ [trước](https://github.com/dtanh275/spring-guide/blob/master/docs/01-HelloSpring.md), chúng ta đã tìm hiểu cách cấu hình Spring xử dụng xml file.
+Ở ví dụ [trước](https://github.com/dtanh275/spring-guide/blob/master/spring-configuration/01-HelloSpring.md), chúng ta đã tìm hiểu cách cấu hình Spring xử dụng xml file.
 
 Việc cấu hình sử dụng file xml có thể gây khó khăn cho người sử dụng. Bắt đầu từ Spring 3.0, Spring cho phép cấu hình thông qua class annotation.
 

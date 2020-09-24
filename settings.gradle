@@ -7,4 +7,6 @@ include 'spring-configuration:annotation'
 include 'spring-di:javaconfiguration'
 include 'spring-di:injection'
 
+include 'bean-lifecycle'
+
 

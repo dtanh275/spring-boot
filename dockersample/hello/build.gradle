@@ -1,5 +1,29 @@
+apply plugin: 'docker'
+
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
+    }
+}
+
 dependencies {
     // spring
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 }
+
+task buildDocker(type: Docker, dependsOn: build) {
+    push = false
+    applicationName = 'hello'
+    tagVersion = 'latest'
+    dockerfile = file('docker/gradledocker/Dockerfile')
+    
+    doFirst {
+        addFile {
+            from jar
+            rename {'dockersample.hello.jar'}
+        }
+    }
+}
+

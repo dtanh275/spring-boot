@@ -1,5 +1,0 @@
-dependencies {
-    compile project(':spring-configuration:context')
-
-    compile group: 'org.springframework', name: 'spring-context', version: '5.2.8.RELEASE'
-}

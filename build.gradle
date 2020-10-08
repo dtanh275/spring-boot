@@ -1,25 +1,21 @@
-allprojects {
-    apply plugin: 'idea'
-    apply plugin: 'application'
-
+plugins {
+    id "org.springframework.boot" version "2.3.4.RELEASE"
+    id "io.spring.dependency-management" version "1.0.10.RELEASE"
 }
 
-buildscript {
-    repositories {
-        jcenter()
-        mavenCentral()
-    }
-}
+group = 'com.donkey.springboot'
+version = '0.0.1-SNAPSHOT'
 
 subprojects {
-    group = 'com.donkey.spring'
-    version = '0.0.1-SNAPSHOT'
+    apply plugin: 'java'    
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
-    apply plugin: 'java'
 
     sourceCompatibility = '11'
 
     repositories {
+        jcenter()
         mavenCentral()
     }
 

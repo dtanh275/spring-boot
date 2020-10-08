@@ -1,12 +1,5 @@
-rootProject.name = 'spring-guide'
+rootProject.name = 'spring-boot'
 
-include 'spring-configuration:hello'
-include 'spring-configuration:context'
-include 'spring-configuration:annotation'
-
-include 'spring-di:javaconfiguration'
-include 'spring-di:injection'
-
-include 'bean-lifecycle'
+include 'dockersample:nginx'
 
 

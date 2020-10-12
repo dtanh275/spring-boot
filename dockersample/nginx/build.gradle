@@ -1,0 +1,28 @@
+apply plugin: 'docker'
+
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
+    }
+}
+
+dependencies {
+    // spring
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+    push = false
+    applicationName = 'springnginx'
+    tagVersion = 'latest'
+    dockerfile = file('docker/Dockerfile')
+    
+    doFirst {
+        addFile {
+            from jar
+            rename {'dockersample.springnginx.jar'}
+        }
+    }
+}
+

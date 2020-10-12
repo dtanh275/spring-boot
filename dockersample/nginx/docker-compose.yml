@@ -1,0 +1,26 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+
+version: '3.7'
+
+# Define services
+services:
+
+  # Nginx
+  nginx:
+    container_name: spring-nginx
+    image: nginx:latest
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+
+  # Spring boot application
+  app:
+    image: spring-boot.dockersample/springnginx:latest
+    container_name: dockersample-springngix
+    ports:
+      - 8080:8080

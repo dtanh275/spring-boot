@@ -1,0 +1,21 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+
+version: '3.7'
+
+# Define services
+services:
+  tomcat:
+    container_name: springtexternaltomcat-tomcat
+    expose:
+      - "8009"
+    build:
+      context: .
+      dockerfile: tomcat/Dockerfile
+  httpd:
+    container_name: springtexternaltomcat-httpd
+    volumes:
+      - ./logs:/var/log/apache2
+    ports:
+      - 80:80
+    build: httpd/.
+

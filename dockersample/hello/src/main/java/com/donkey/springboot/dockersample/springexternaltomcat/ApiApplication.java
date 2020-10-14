@@ -1,4 +1,4 @@
-package com.donkey.springboot.dockersample.nginx;
+package com.donkey.springboot.dockersample.springexternaltomcat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -25,5 +25,8 @@ subprojects {
 
         testCompileOnly 'org.projectlombok:lombok:1.18.12'
         testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+        testCompile('org.junit.jupiter:junit-jupiter:5.4.0')
     }
 }

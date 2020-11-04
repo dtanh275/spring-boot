@@ -36,6 +36,8 @@ public class CachingAnnotationTest {
         log.info(hotelService.hello("Harry"));
         hotelService.putName("Harry");
         log.info(hotelService.hello("Harry"));
+
+        log.info(cacheManager.getCache(HotelService.CACHE_NAME).getName());
     }
 
     @Test

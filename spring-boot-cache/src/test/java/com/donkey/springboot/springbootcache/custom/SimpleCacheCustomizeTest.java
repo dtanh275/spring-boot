@@ -12,7 +12,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import lombok.extern.slf4j.Slf4j;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = SimpleCacheCustomizerApp.class)
+@SpringBootTest("spring.cache.type=simple")
 @Slf4j
 public class SimpleCacheCustomizeTest {
 

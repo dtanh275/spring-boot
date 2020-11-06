@@ -11,9 +11,9 @@ import com.donkey.springboot.springbootcache.mutiple.WitcherSchoolService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@SpringBootTest(classes = MultipleCacheManagerTestConfig.class)
+@SpringBootTest(classes = CacheResolverTestConfig.class)
 @Slf4j
-public class MultipleCacheManagerTest {
+public class CacheResolverTest {
 
     @Autowired
     private CacheManager cacheManager;
@@ -23,11 +23,12 @@ public class MultipleCacheManagerTest {
     private WitcherSchoolService witcherSchoolService;
 
     @Test
-    public void multipleCacheManagerTest() {
-        witcherSchoolService.recruitWolfStudent("Geralt");
-        witcherSchoolService.recruitSnakeStudent("Letho");
+    public void cacheResolverTest() {
+        witcherSchoolService.trainWolf("Geralt");
+        witcherSchoolService.trainSnake("Letho");
 
-        assertNotNull(cacheManager.getCache("schoolOfWolf").get("Geralt"));
-        assertNotNull(secondaryCacheManager.getCache("schoolOfSnake").get("Letho"));
+        assertNotNull(cacheManager.getCache("school_of_wolf").get("Geralt"));
+        assertNotNull(secondaryCacheManager.getCache("school_of_snake").get("Letho"));
     }
+
 }

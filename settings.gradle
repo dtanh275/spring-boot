@@ -2,5 +2,5 @@ rootProject.name = 'spring-boot'
 
 include 'dockersample:hello', 'dockersample:nginx', 'dockersample:springexternaltomcat' 
 
-include 'spring-boot-cache' 
+include 'spring-boot-cache', 'spring-redis-cache'
 

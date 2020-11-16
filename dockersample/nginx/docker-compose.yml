@@ -20,7 +20,7 @@ services:
 
   # Spring boot application
   app:
-    image: spring-boot.dockersample/springnginx:latest
+    image: com.donkey.springboot/springnginx:latest
     container_name: dockersample-springngix
     ports:
       - 8080:8080

@@ -1,17 +1,39 @@
-apply plugin: 'docker'
-
 buildscript {
-    repositories { jcenter() }
     dependencies {
         classpath 'se.transmode.gradle:gradle-docker:1.2'
     }
 }
 
+plugins {
+    id 'org.springframework.boot' version '2.4.0'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.donkey.springboot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
 dependencies {
-    // spring
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.junit.jupiter:junit-jupiter:5.4.0')
 }
+
+apply plugin: 'docker'
 
 task buildDocker(type: Docker, dependsOn: build) {
     push = false

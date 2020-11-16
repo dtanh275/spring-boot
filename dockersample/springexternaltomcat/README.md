@@ -4,17 +4,17 @@ Read guide in [here](https://dirtyhands.me/run-spring-boot-application-external-
 
 ### How to run
 
-1. On `spring-boot` folder, build `war` file
+1. Build `war` file
 ```bash
-./gradlew dockersample:springexternaltomcat:bootWar
+$ ./gradlew bootWar
 ```
 
-2. On `dockersample/springexternaltomcat` folder, run start tomcat and apache
+2. Run start tomcat and apache
 ```bash
-docker-compose up
+$ docker-compose up
 ```
 
 3. Test
 ```bash
-curl http://localhost/springexternaltomcat/api/hello
+$ curl http://localhost/springexternaltomcat/api/hello
 ```

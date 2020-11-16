@@ -6,16 +6,17 @@ Read guide in [here](https://dirtyhands.me/deploy-spring-boot-with-nginx/).
 
 1. **Create `docker image`**
 
-At `spring-boot` folder
-
 ```bash
-./gradlew buildDocker
+$ ./gradlew buildDocker
 ```
 
 2. **Run `docker-compose`**
 
-At `spring-boot/dockersample/nginx` folder
-
 ```bash
- docker-compose up
+ $ docker-compose up
+```
+
+3. **Testing**
+```bash
+$ curl http://localhost:8080/api/hello
 ```

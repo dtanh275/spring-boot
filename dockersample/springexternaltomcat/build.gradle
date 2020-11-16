@@ -1,9 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.0'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
 apply plugin: 'war'
+
+group = 'com.donkey.springboot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-}
 
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+}
 
